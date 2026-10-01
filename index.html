@@ -1,1245 +1,510 @@
+
 <!DOCTYPE html>
 <html lang="es">
-<head> <meta name="google-site-verification" content="NiE0IxiDKpHlzwFR_5RYq5p1pQzpLhZ7BTEHdtRbLAs" />
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>CHARBON | Historia</title>
 
 <style>
-
-/* =========================
-   BASE
-========================= */
-
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
 body{
-    background:#090909;
-    color:#eee;
-    font-family:Georgia, "Times New Roman", serif;
-    transition:.4s;
+ background:#090909;
+ color:#eee;
+ font-family:Georgia,"Times New Roman",serif;
+ transition:.4s;
 }
+button{font-family:inherit;cursor:pointer}
 
-button{
-    font-family:inherit;
-    cursor:pointer;
-}
-
-
-/* =========================
-   INTRO
-========================= */
-
+/* INTRO */
 #intro{
-    position:fixed;
-    inset:0;
-    z-index:9999;
-
-    background:#050505;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    text-align:center;
-
-    animation:introOut 1s ease 2.8s forwards;
+ position:fixed;inset:0;z-index:9999;
+ background:#050505;
+ display:flex;align-items:center;justify-content:center;
+ text-align:center;
+ animation:introOut 1s ease 2.8s forwards;
 }
-
 .introText h1{
-    font-family:Georgia,serif;
-    font-size:clamp(55px,15vw,120px);
-    letter-spacing:15px;
-
-    color:#eee;
-
-    text-shadow:
-        0 0 15px #fff3,
-        0 0 40px #7c1d45;
+ font-size:clamp(55px,15vw,120px);
+ letter-spacing:15px;color:#eee;
+ text-shadow:0 0 15px #fff3,0 0 40px #7c1d45;
 }
-
 .introText p{
-    margin-top:15px;
-    color:#888;
-    letter-spacing:5px;
-    font-size:12px;
+ margin-top:15px;color:#888;
+ letter-spacing:5px;font-size:12px;
 }
-
 @keyframes introOut{
-    to{
-        opacity:0;
-        pointer-events:none;
-        visibility:hidden;
-    }
+ to{opacity:0;pointer-events:none;visibility:hidden}
 }
 
-
-/* =========================
-   NAVBAR
-========================= */
-
+/* NAVBAR */
 nav{
-    position:sticky;
-    top:0;
-    z-index:1000;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding:18px 7%;
-
-    background:#0c0c0cdd;
-    backdrop-filter:blur(12px);
-
-    border-bottom:1px solid #ffffff12;
+ position:sticky;top:0;z-index:1000;
+ display:flex;justify-content:space-between;
+ align-items:center;padding:18px 7%;
+ background:#0c0c0cdd;
+ backdrop-filter:blur(12px);
+ border-bottom:1px solid #ffffff12;
 }
-
 .logo{
-    font-size:22px;
-    letter-spacing:6px;
-    font-weight:bold;
-
-    cursor:pointer;
-
-    color:#eee;
+ font-size:22px;letter-spacing:6px;
+ font-weight:bold;cursor:pointer;color:#eee;
 }
-
-.navButtons{
-    display:flex;
-    gap:8px;
-}
-
+.navButtons{display:flex;gap:8px}
 .navButtons button{
-    padding:9px 13px;
-
-    background:#171717;
-    border:1px solid #ffffff1a;
-
-    color:#ccc;
-
-    border-radius:7px;
+ padding:9px 13px;background:#171717;
+ border:1px solid #ffffff1a;color:#ccc;
+ border-radius:7px;
 }
+.navButtons button:hover{background:#252525}
 
-.navButtons button:hover{
-    background:#252525;
-}
-
-
-/* =========================
-   HERO
-========================= */
-
+/* HERO */
 .hero{
-    min-height:720px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    text-align:center;
-
-    padding:50px 20px;
-
-    position:relative;
-    overflow:hidden;
-
-    background:
-        radial-gradient(circle at center,#3b1025 0%,#0d070a 35%,#050505 75%);
+ min-height:720px;display:flex;
+ align-items:center;justify-content:center;
+ text-align:center;padding:50px 20px;
+ position:relative;overflow:hidden;
+ background:radial-gradient(circle at center,#3b1025 0%,#0d070a 35%,#050505 75%);
 }
-
 .hero::before{
-    content:"";
-
-    position:absolute;
-    width:500px;
-    height:500px;
-
-    border-radius:50%;
-
-    background:#741c4630;
-
-    filter:blur(100px);
-
-    animation:pulse 5s infinite alternate;
+ content:"";position:absolute;width:500px;height:500px;
+ border-radius:50%;background:#741c4630;
+ filter:blur(100px);animation:pulse 5s infinite alternate;
 }
-
 @keyframes pulse{
-    from{
-        transform:scale(.8);
-        opacity:.4;
-    }
-
-    to{
-        transform:scale(1.3);
-        opacity:.8;
-    }
+ from{transform:scale(.8);opacity:.4}
+ to{transform:scale(1.3);opacity:.8}
 }
-
-.heroContent{
-    position:relative;
-    z-index:2;
-}
-
+.heroContent{position:relative;z-index:2}
 .heroSmall{
-    color:#9a9a9a;
-
-    letter-spacing:8px;
-
-    font-size:11px;
-
-    margin-bottom:20px;
+ color:#9a9a9a;letter-spacing:8px;
+ font-size:11px;margin-bottom:20px;
 }
-
 .hero h1{
-    font-size:clamp(65px,18vw,150px);
-
-    letter-spacing:18px;
-
-    color:#f1f1f1;
-
-    text-shadow:
-        0 0 20px #ffffff20,
-        0 0 60px #711d45;
+ font-size:clamp(65px,18vw,150px);
+ letter-spacing:18px;color:#f1f1f1;
+ text-shadow:0 0 20px #ffffff20,0 0 60px #711d45;
 }
-
 .hero h2{
-    margin-top:10px;
-
-    font-size:18px;
-
-    color:#a35c7e;
-
-    font-weight:normal;
-
-    letter-spacing:4px;
+ margin-top:10px;font-size:18px;
+ color:#a35c7e;font-weight:normal;letter-spacing:4px;
 }
-
 .hero p{
-    max-width:650px;
-
-    margin:30px auto;
-
-    color:#aaa;
-
-    line-height:1.7;
+ max-width:650px;margin:30px auto;
+ color:#aaa;line-height:1.7;
 }
-
 .mainButton{
-    padding:15px 28px;
-
-    border:1px solid #793451;
-
-    border-radius:7px;
-
-    background:#48182d;
-
-    color:white;
-
-    font-size:16px;
-
-    transition:.3s;
+ padding:15px 28px;border:1px solid #793451;
+ border-radius:7px;background:#48182d;
+ color:white;font-size:16px;transition:.3s;
 }
-
 .mainButton:hover{
-    background:#722348;
-    transform:translateY(-3px);
-
-    box-shadow:0 10px 30px #711d4540;
+ background:#722348;transform:translateY(-3px);
+ box-shadow:0 10px 30px #711d4540;
 }
 
+/* SECCIONES */
+section{padding:90px 8%}
+.sectionTitle{text-align:center;margin-bottom:50px}
+.sectionTitle small{color:#9b5277;letter-spacing:5px}
+.sectionTitle h2{margin-top:10px;font-size:42px}
 
-/* =========================
-   SECTIONS
-========================= */
-
-section{
-    padding:90px 8%;
-}
-
-.sectionTitle{
-    text-align:center;
-    margin-bottom:50px;
-}
-
-.sectionTitle small{
-    color:#9b5277;
-    letter-spacing:5px;
-}
-
-.sectionTitle h2{
-    margin-top:10px;
-
-    font-size:42px;
-}
-
-
-/* =========================
-   HISTORIA
-========================= */
-
+/* HISTORIA */
 .storyIntro{
-    max-width:750px;
-
-    margin:auto;
-
-    text-align:center;
-
-    color:#aaa;
-
-    line-height:1.8;
-
-    font-size:17px;
+ max-width:750px;margin:auto;text-align:center;
+ color:#aaa;line-height:1.8;font-size:17px;
 }
 
-
-/* =========================
-   EPISODIOS
-========================= */
-
+/* EPISODIOS */
 .episodes{
-    display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(250px,1fr));
-
-    gap:20px;
-
-    max-width:950px;
-
-    margin:45px auto 0;
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+ gap:20px;max-width:950px;margin:45px auto 0;
 }
-
 .episode{
-    position:relative;
-
-    padding:30px;
-
-    background:
-        linear-gradient(145deg,#171717,#0c0c0c);
-
-    border:1px solid #ffffff12;
-
-    border-radius:12px;
-
-    transition:.3s;
-
-    cursor:pointer;
+ position:relative;padding:30px;
+ background:linear-gradient(145deg,#171717,#0c0c0c);
+ border:1px solid #ffffff12;border-radius:12px;
+ transition:.3s;cursor:pointer;
 }
-
 .episode:hover{
-    transform:translateY(-6px);
-
-    border-color:#83365a;
-
-    box-shadow:0 15px 40px #000;
+ transform:translateY(-6px);
+ border-color:#83365a;box-shadow:0 15px 40px #000;
 }
-
 .episodeNumber{
-    color:#8d4568;
-
-    font-size:12px;
-
-    letter-spacing:4px;
+ color:#8d4568;font-size:12px;letter-spacing:4px;
 }
+.episode h3{margin-top:15px;font-size:25px}
+.episode p{margin-top:12px;color:#777;line-height:1.5}
 
-.episode h3{
-    margin-top:15px;
-
-    font-size:25px;
-}
-
-.episode p{
-    margin-top:12px;
-
-    color:#777;
-
-    line-height:1.5;
-}
-
-.locked{
-    opacity:.45;
-    cursor:not-allowed;
-}
-
-
-/* =========================
-   LECTOR
-========================= */
-
+/* LECTOR */
 #reader{
-    display:none;
-
-    min-height:100vh;
-
-    background:
-        radial-gradient(
-            circle at top,
-            #24101a,
-            #080808 60%
-        );
-
-    padding:70px 15px;
+ display:none;min-height:100vh;
+ background:radial-gradient(circle at top,#24101a,#080808 60%);
+ padding:70px 15px;
 }
-
 .readerBox{
-    max-width:800px;
-
-    margin:auto;
-
-    background:#111;
-
-    border:1px solid #ffffff12;
-
-    box-shadow:0 20px 70px #000;
-
-    padding:clamp(25px,6vw,65px);
-
-    border-radius:4px;
+ max-width:800px;margin:auto;background:#111;
+ border:1px solid #ffffff12;
+ box-shadow:0 20px 70px #000;
+ padding:clamp(25px,6vw,65px);border-radius:4px;
 }
-
 .readerTop{
-    text-align:center;
-
-    padding-bottom:35px;
-
-    border-bottom:1px solid #ffffff15;
+ text-align:center;padding-bottom:35px;
+ border-bottom:1px solid #ffffff15;
 }
-
-.readerTop small{
-    color:#995275;
-
-    letter-spacing:4px;
-}
-
+.readerTop small{color:#995275;letter-spacing:4px}
 .readerTop h1{
-    margin-top:15px;
-
-    font-size:clamp(30px,7vw,50px);
+ margin-top:15px;font-size:clamp(30px,7vw,50px);
 }
-
 .readerTop h2{
-    margin-top:8px;
-
-    color:#777;
-
-    font-size:18px;
-
-    font-weight:normal;
+ margin-top:8px;color:#777;font-size:18px;
+ font-weight:normal;
 }
-
 .storyText{
-    margin-top:45px;
-
-    color:#d4d4d4;
-
-    font-size:18px;
-
-    line-height:2;
-
-    white-space:pre-line;
+ margin-top:45px;color:#d4d4d4;
+ font-size:18px;line-height:2;white-space:pre-line;
 }
-
-.storyText p{
-    margin-bottom:25px;
-}
-
 .readerNavigation{
-    display:flex;
-
-    justify-content:space-between;
-
-    gap:10px;
-
-    margin-top:60px;
-
-    padding-top:25px;
-
-    border-top:1px solid #ffffff15;
+ display:flex;justify-content:space-between;
+ gap:10px;margin-top:60px;padding-top:25px;
+ border-top:1px solid #ffffff15;
 }
-
 .readerNavigation button{
-    padding:12px 18px;
-
-    border-radius:7px;
-
-    background:#1c1c1c;
-
-    border:1px solid #ffffff15;
-
-    color:#ddd;
+ padding:12px 18px;border-radius:7px;
+ background:#1c1c1c;border:1px solid #ffffff15;
+ color:#ddd;
 }
-
-.readerNavigation button:hover{
-    background:#592039;
-}
-
+.readerNavigation button:hover{background:#592039}
 .chapterIndicator{
-    text-align:center;
-
-    color:#666;
-
-    font-size:12px;
-
-    letter-spacing:2px;
-
-    align-self:center;
+ text-align:center;color:#666;font-size:12px;
+ letter-spacing:2px;align-self:center;
 }
 
-
-/* =========================
-   PERSONAJES
-========================= */
-
+/* PERSONAJES */
 .characters{
-    display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(220px,1fr));
-
-    gap:20px;
-
-    max-width:1000px;
-
-    margin:auto;
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+ gap:20px;max-width:1000px;margin:auto;
 }
-
 .character{
-    min-height:180px;
-
-    padding:25px;
-
-    background:#111;
-
-    border:1px solid #ffffff10;
-
-    border-radius:10px;
-
-    transition:.3s;
+ min-height:180px;padding:25px;
+ background:#111;border:1px solid #ffffff10;
+ border-radius:10px;transition:.3s;
 }
-
-.character:hover{
-    border-color:#743251;
+.character:hover{border-color:#743251}
+.characterIcon{font-size:38px;margin-bottom:15px}
+.character h3{font-size:22px}
+.character p{margin-top:8px;color:#777;line-height:1.5}
+.characterDabon p{
+ cursor:pointer;
+ user-select:none;
 }
+.characterDabon p:active{color:#c77ca0}
 
-.characterIcon{
-    font-size:38px;
-
-    margin-bottom:15px;
-}
-
-.character h3{
-    font-size:22px;
-}
-
-.character p{
-    margin-top:8px;
-
-    color:#777;
-
-    line-height:1.5;
-}
-
-
-/* =========================
-   ARCHIVO SECRETO
-========================= */
-
+/* ARCHIVO SECRETO */
 .secretSection{
-    text-align:center;
-
-    background:
-        radial-gradient(
-            circle,
-            #230e19,
-            #070707 70%
-        );
+ text-align:center;
+ background:radial-gradient(circle,#230e19,#070707 70%);
 }
-
 .secretButton{
-    margin-top:25px;
-
-    padding:13px 25px;
-
-    background:#120b0e;
-
-    color:#9e4f75;
-
-    border:1px solid #5e2944;
-
-    border-radius:7px;
+ margin-top:25px;padding:13px 25px;
+ background:#120b0e;color:#9e4f75;
+ border:1px solid #5e2944;border-radius:7px;
 }
+.secretButton:hover{background:#351427}
 
-.secretButton:hover{
-    background:#351427;
-}
-
-
-/* =========================
-   DABON OVERLAY
-========================= */
-
+/* OVERLAY DABON */
 #dabonArchive{
-    display:none;
-
-    position:fixed;
-    inset:0;
-
-    z-index:5000;
-
-    background:#030303f5;
-
-    align-items:center;
-    justify-content:center;
-
-    padding:20px;
+ display:none;position:fixed;inset:0;
+ z-index:5000;background:#030303f5;
+ align-items:center;justify-content:center;
+ padding:20px;overflow-y:auto;
 }
-
 #dabonArchive.active{
-    display:flex;
-
-    animation:archiveIn .7s;
+ display:flex;animation:archiveIn .7s;
 }
-
 .archiveBox{
-    max-width:650px;
-
-    width:100%;
-
-    padding:45px 30px;
-
-    text-align:center;
-
-    background:
-        radial-gradient(
-            circle,
-            #321324,
-            #090909 70%
-        );
-
-    border:1px solid #753253;
-
-    box-shadow:
-        0 0 80px #661e4240;
-
-    border-radius:10px;
+ max-width:700px;width:100%;
+ max-height:90vh;overflow-y:auto;
+ padding:40px 30px;text-align:left;
+ background:radial-gradient(circle at top,#321324,#090909 70%);
+ border:1px solid #753253;
+ box-shadow:0 0 80px #661e4240;border-radius:10px;
 }
-
 .dabonSymbol{
-    font-size:80px;
-
-    margin-bottom:20px;
-
-    filter:
-        drop-shadow(0 0 20px #9a285e);
+ text-align:center;font-size:65px;margin-bottom:15px;
+ filter:drop-shadow(0 0 20px #9a285e);
 }
-
 .archiveWarning{
-    color:#a34e77;
-
-    font-size:11px;
-
-    letter-spacing:5px;
+ text-align:center;color:#a34e77;
+ font-size:11px;letter-spacing:4px;
 }
-
 .archiveBox h2{
-    margin:20px 0;
-
-    font-size:42px;
+ text-align:center;margin:18px 0 25px;font-size:38px;
 }
-
-.archiveBox p{
-    color:#888;
-
-    line-height:1.7;
+.archiveBox h3{
+ color:#b66b8e;margin:24px 0 9px;font-size:19px;
 }
-
+.archiveBox p{color:#aaa;line-height:1.8;margin:10px 0}
+.archiveNote{
+ font-size:12px;color:#76566a!important;
+ border-top:1px solid #ffffff15;
+ padding-top:15px;margin-top:22px!important;
+}
 .closeArchive{
-    margin-top:30px;
-
-    padding:12px 25px;
-
-    background:#3b172a;
-
-    color:#ddd;
-
-    border:1px solid #743351;
-
-    border-radius:7px;
+ display:block;margin:25px auto 0;padding:12px 25px;
+ background:#3b172a;color:#ddd;
+ border:1px solid #743351;border-radius:7px;
 }
-
 @keyframes archiveIn{
-    from{
-        opacity:0;
-        transform:scale(.8);
-    }
-
-    to{
-        opacity:1;
-        transform:scale(1);
-    }
+ from{opacity:0;transform:scale(.8)}
+ to{opacity:1;transform:scale(1)}
 }
 
-
-/* =========================
-   FOOTER
-========================= */
-
+/* FOOTER */
 footer{
-    padding:50px 20px;
-
-    text-align:center;
-
-    color:#555;
-
-    border-top:1px solid #ffffff0d;
+ padding:50px 20px;text-align:center;
+ color:#555;border-top:1px solid #ffffff0d;
 }
+footer strong{color:#8d4568}
 
-footer strong{
-    color:#8d4568;
-}
-
-
-/* =========================
-   RESPONSIVE
-========================= */
-
+/* RESPONSIVE */
 @media(max-width:600px){
-
-    nav{
-        padding:14px;
-    }
-
-    .logo{
-        font-size:17px;
-        letter-spacing:4px;
-    }
-
-    .navButtons button{
-        padding:8px;
-    }
-
-    section{
-        padding:65px 20px;
-    }
-
-    .readerNavigation{
-        flex-direction:column;
-    }
-
-    .chapterIndicator{
-        order:-1;
-    }
-
+ nav{padding:14px}
+ .logo{font-size:17px;letter-spacing:4px}
+ .navButtons button{padding:8px}
+ section{padding:65px 20px}
+ .readerNavigation{flex-direction:column}
+ .chapterIndicator{order:-1}
+ .archiveBox{padding:30px 20px}
 }
-
 </style>
 </head>
 
-
 <body>
 
-
-<!-- =========================
-     INTRO
-========================= -->
-
+<!-- INTRO -->
 <div id="intro">
-
-    <div class="introText">
-
-        <h1>CHARBON</h1>
-
-        <p>
-            ARCHIVO DE HISTORIA
-        </p>
-
-    </div>
-
+ <div class="introText">
+  <h1>CHARBON</h1>
+  <p>ARCHIVO DE HISTORIA</p>
+ </div>
 </div>
 
-
-<!-- =========================
-     NAV
-========================= -->
-
+<!-- NAV -->
 <nav>
-
-    <div
-        class="logo"
-        onclick="goHome()"
-    >
-        CHARBON
-    </div>
-
-    <div class="navButtons">
-
-        <button onclick="goStory()">
-            📖 Historia
-        </button>
-
-        <button onclick="toggleTheme()">
-            ◐
-        </button>
-
-    </div>
-
+ <div class="logo" onclick="goHome()">CHARBON</div>
+ <div class="navButtons">
+  <button onclick="goStory()">📖 Historia</button>
+  <button onclick="toggleTheme()">◐</button>
+ </div>
 </nav>
 
-
-<!-- =========================
-     HERO
-========================= -->
-
+<!-- HERO -->
 <header class="hero" id="home">
-
-    <div class="heroContent">
-
-        <div class="heroSmall">
-            UNA HISTORIA ORIGINAL
-        </div>
-
-        <h1>CHARBON</h1>
-
-        <h2>
-            DOS MUNDOS. DOS CHICOS. UNA HISTORIA.
-        </h2>
-
-        <p>
-            Charles Wayne solo quería sobrevivir a la
-            escuela y a sus propios problemas.
-            Lo último que esperaba era descubrir que
-            un príncipe demonio aparecería en su habitación.
-        </p>
-
-        <button
-            class="mainButton"
-            onclick="openChapter(0)"
-        >
-            📖 COMENZAR A LEER
-        </button>
-
-    </div>
-
+ <div class="heroContent">
+  <div class="heroSmall">UNA HISTORIA ORIGINAL</div>
+  <h1>CHARBON</h1>
+  <h2>DOS MUNDOS. DOS CHICOS. UNA HISTORIA.</h2>
+  <p>
+   Charles Wayne solo quería sobrevivir a la
+   escuela y a sus propios problemas.
+   Lo último que esperaba era descubrir que
+   un príncipe demonio aparecería en su habitación.
+  </p>
+  <button class="mainButton" onclick="openChapter(0)">
+   📖 COMENZAR A LEER
+  </button>
+ </div>
 </header>
 
-
-<!-- =========================
-     HISTORIA
-========================= -->
-
+<!-- HISTORIA -->
 <section id="story">
+ <div class="sectionTitle">
+  <small>LA HISTORIA</small>
+  <h2>Episodios</h2>
+ </div>
 
-    <div class="sectionTitle">
+ <div class="storyIntro">
+  <p>
+   Bienvenido al mundo de CHARBON.
+   Aquí podrás leer la historia capítulo por capítulo
+   mientras el universo crece.
+  </p>
+ </div>
 
-        <small>LA HISTORIA</small>
+ <div class="episodes">
+  <div class="episode" onclick="openChapter(0)">
+   <div class="episodeNumber">EPISODIO 01</div>
+   <h3>La bienvenida CharBon</h3>
+   <p>Charlie conoce a un extraño visitante que definitivamente no estaba invitado.</p>
+  </div>
 
-        <h2>
-            Episodios
-        </h2>
+  <div class="episode" onclick="openChapter(1)">
+   <div class="episodeNumber">EPISODIO 02</div>
+   <h3>La verdad</h3>
+   <p>Charlie y Dabon comienzan a conocerse, mientras descubrimos sus pasados.</p>
+  </div>
 
-    </div>
-
-
-    <div class="storyIntro">
-
-        <p>
-            Bienvenido al mundo de CHARBON.
-            Aquí podrás leer la historia capítulo por capítulo
-            mientras el universo crece.
-        </p>
-
-    </div>
-
-
-    <div class="episodes">
-
-
-        <div
-            class="episode"
-            onclick="openChapter(0)"
-        >
-
-            <div class="episodeNumber">
-                EPISODIO 01
-            </div>
-
-            <h3>
-                La bienvenida CharBon
-            </h3>
-
-            <p>
-                Charlie conoce a un extraño visitante
-                que definitivamente no estaba invitado.
-            </p>
-
-        </div>
-
-
-        <div
-            class="episode"
-            onclick="openChapter(1)"
-        >
-
-            <div class="episodeNumber">
-                EPISODIO 02
-            </div>
-
-            <h3>
-                La verdad
-            </h3>
-
-            <p>
-                Charlie y Dabon comienzan a conocerse,
-                mientras descubrimos sus pasados.
-            </p>
-
-        </div>
-
-
-        <div class="episode locked">
-
-            <div class="episodeNumber">
-                EPISODIO 03
-            </div>
-
-            <h3>
-                La colada
-            </h3>
-
-            <p>
-                🔒 Próximamente...
-            </p>
-
-        </div>
-
-
-    </div>
-
+  <div class="episode" onclick="openChapter(2)">
+   <div class="episodeNumber">EPISODIO 03</div>
+   <h3>La Colada</h3>
+   <p>Dabon se prepara para infiltrarse en la escuela de Charlie.</p>
+  </div>
+ </div>
 </section>
 
-
-<!-- =========================
-     PERSONAJES
-========================= -->
-
+<!-- PERSONAJES -->
 <section>
+ <div class="sectionTitle">
+  <small>ARCHIVOS</small>
+  <h2>Personajes</h2>
+ </div>
 
-    <div class="sectionTitle">
+ <div class="characters">
+  <div class="character">
+   <div class="characterIcon">👦</div>
+   <h3>Charlie</h3>
+   <p>Charles Wayne. Un chico nuevo, nerd y algo inseguro que terminará metido en algo mucho más grande.</p>
+  </div>
 
-        <small>ARCHIVOS</small>
+  <div class="character characterDabon">
+   <div class="characterIcon">👹</div>
+   <h3>Dabon</h3>
+   <p id="dabonDescription" onclick="tapDabonDescription()">
+    Príncipe demonio enviado al mundo humano por orden de su padre, Luther.
+   </p>
+  </div>
 
-        <h2>
-            Personajes
-        </h2>
+  <div class="character">
+   <div class="characterIcon">🎲</div>
+   <h3>Víctor</h3>
+   <p>Uno de los primeros amigos de Charlie.</p>
+  </div>
 
-    </div>
+  <div class="character">
+   <div class="characterIcon">🎮</div>
+   <h3>Gabriel</h3>
+   <p>Parte del grupo que se convertiría en el ancla de Charlie.</p>
+  </div>
 
+  <div class="character">
+   <div class="characterIcon">🧩</div>
+   <h3>Alan</h3>
+   <p>Uno de los tres chicos que aceptaron a Charlie cuando más lo necesitaba.</p>
+  </div>
 
-    <div class="characters">
-
-
-        <div class="character">
-
-            <div class="characterIcon">
-                👦
-            </div>
-
-            <h3>
-                Charlie
-            </h3>
-
-            <p>
-                Charles Wayne. Un chico nuevo,
-                nerd y algo inseguro que terminará
-                metido en algo mucho más grande.
-            </p>
-
-        </div>
-
-
-        <div class="character">
-
-            <div class="characterIcon">
-                👹
-            </div>
-
-            <h3>
-                Dabon
-            </h3>
-
-            <p>
-                Príncipe demonio enviado al mundo humano
-                por orden de su padre, Luther.
-            </p>
-
-        </div>
-
-
-        <div class="character">
-
-            <div class="characterIcon">
-                🎲
-            </div>
-
-            <h3>
-                Víctor
-            </h3>
-
-            <p>
-                Uno de los primeros amigos de Charlie.
-            </p>
-
-        </div>
-
-
-        <div class="character">
-
-            <div class="characterIcon">
-                🎮
-            </div>
-
-            <h3>
-                Gabriel
-            </h3>
-
-            <p>
-                Parte del grupo que se convertiría
-                en el ancla de Charlie.
-            </p>
-
-        </div>
-
-
-        <div class="character">
-
-            <div class="characterIcon">
-                🧩
-            </div>
-
-            <h3>
-                Alan
-            </h3>
-
-            <p>
-                Uno de los tres chicos que aceptaron
-                a Charlie cuando más lo necesitaba.
-            </p>
-
-        </div>
-
-
-        <div class="character">
-
-            <div class="characterIcon">
-                🕯️
-            </div>
-
-            <h3>
-                Lizbeth
-            </h3>
-
-            <p>
-                La chica popular de la escuela
-                que ocupa la mente de Charlie.
-            </p>
-
-        </div>
-
-
-    </div>
-
+  <div class="character">
+   <div class="characterIcon">🕯️</div>
+   <h3>Lizbeth</h3>
+   <p>La chica popular de la escuela que ocupa la mente de Charlie.</p>
+  </div>
+ </div>
 </section>
 
-
-<!-- =========================
-     SECRET
-========================= -->
-
+<!-- SECRET -->
 <section class="secretSection">
+ <div class="sectionTitle">
+  <small>ARCHIVO RESTRINGIDO</small>
+  <h2>Hay algo más...</h2>
+ </div>
 
-    <div class="sectionTitle">
+ <p style="max-width:600px;margin:auto;color:#777;line-height:1.7">
+  Algunos archivos todavía no deberían estar disponibles.
+ </p>
 
-        <small>ARCHIVO RESTRINGIDO</small>
-
-        <h2>
-            Hay algo más...
-        </h2>
-
-    </div>
-
-
-    <p style="
-        max-width:600px;
-        margin:auto;
-        color:#777;
-        line-height:1.7;
-    ">
-
-        Algunos archivos todavía no deberían
-        estar disponibles.
-
-    </p>
-
-
-    <button
-        class="secretButton"
-        onclick="openDabon()"
-    >
-        🔐 Intentar acceder
-    </button>
-
+ <button class="secretButton" onclick="openDabon()">
+  🔐 Intentar acceder
+ </button>
 </section>
 
-
-<!-- =========================
-     FOOTER
-========================= -->
-
+<!-- FOOTER -->
 <footer>
-
-    <p>
-        Una historia creada por
-        <strong>Daniel Mora</strong>
-    </p>
-
-    <br>
-
-    <p>
-        CHARBON © 2026
-    </p>
-
+ <p>Una historia creada por <strong>Dani</strong></p>
+ <br>
+ <p>CHARBON © 2026</p>
 </footer>
 
-
-<!-- =========================
-     LECTOR
-========================= -->
-
+<!-- LECTOR -->
 <section id="reader">
+ <div class="readerBox">
+  <div class="readerTop">
+   <small id="readerEpisode">EPISODIO 01</small>
+   <h1 id="readerTitle">La bienvenida CharBon</h1>
+   <h2 id="readerSubtitle">CharBon</h2>
+  </div>
 
-    <div class="readerBox">
+  <div class="storyText" id="storyText"></div>
 
-        <div class="readerTop">
+  <div class="readerNavigation">
+   <button id="previousButton" onclick="previousChapter()">← Anterior</button>
+   <div class="chapterIndicator" id="chapterIndicator">1 / 3</div>
+   <button id="nextButton" onclick="nextChapter()">Siguiente →</button>
+  </div>
 
-            <small id="readerEpisode">
-                EPISODIO 01
-            </small>
-
-            <h1 id="readerTitle">
-                La bienvenida CharBon
-            </h1>
-
-            <h2 id="readerSubtitle">
-                CharBon
-            </h2>
-
-        </div>
-
-
-        <div
-            class="storyText"
-            id="storyText"
-        ></div>
-
-
-        <div class="readerNavigation">
-
-            <button
-                id="previousButton"
-                onclick="previousChapter()"
-            >
-                ← Anterior
-            </button>
-
-
-            <div
-                class="chapterIndicator"
-                id="chapterIndicator"
-            >
-                1 / 2
-            </div>
-
-
-            <button
-                id="nextButton"
-                onclick="nextChapter()"
-            >
-                Siguiente →
-            </button>
-
-        </div>
-
-
-        <br>
-
-
-        <button
-            class="mainButton"
-            onclick="closeReader()"
-        >
-            ← Volver a CHARBON
-        </button>
-
-    </div>
-
+  <br>
+  <button class="mainButton" onclick="closeReader()">← Volver a CHARBON</button>
+ </div>
 </section>
 
+<!-- ARCHIVO FAMILIAR DE DABON -->
+<div id="dabonArchive" role="dialog" aria-modal="true">
+ <div class="archiveBox">
+  <div class="dabonSymbol">👹</div>
+  <div class="archiveWarning">ARCHIVO CB-001 · ACCESO RESTRINGIDO</div>
 
-<!-- =========================
-     DABON ARCHIVE
-========================= -->
+  <h2>EL LEGADO DE DABON</h2>
 
-<div id="dabonArchive">
+  <h3>Identidad</h3>
+  <p>
+   Dabon es un príncipe demonio, hijo de Luther.
+   Tiene 114 años de edad demoníaca.
+   Fue enviado al mundo humano por orden de su padre.
+  </p>
 
-    <div class="archiveBox">
+  <h3>Luther: el padre</h3>
+  <p>
+   Luther construyó su poder alrededor de su imperio y de sus intereses.
+   Para él, la disciplina y el poder siempre estuvieron por encima de
+   mostrar debilidad. Dabon creció bajo esa presión y con el peso
+   del título de heredero del trono.
+  </p>
 
-        <div class="dabonSymbol">
-            👹
-        </div>
+  <h3>El viaje a la Tierra</h3>
+  <p>
+   Antes de la historia de Dabon, el padre de Luther lo envió a la Tierra
+   durante aproximadamente un mes. Allí, Luther conoció a una mujer
+   humana y llegó a enamorarse de ella.
+  </p>
 
-        <div class="archiveWarning">
-            ARCHIVO CB-001 · ACCESO RESTRINGIDO
-        </div>
+  <h3>La madre que Dabon conoce</h3>
+  <p>
+   La mujer que Dabon considera su madre no es su madre biológica:
+   es su madrastra. Luther terminó casándose con ella por motivos
+   relacionados con el poder y la obligación. La verdad sobre la madre
+   biológica de Dabon forma parte de los secretos de esta familia.
+  </p>
 
-        <h2>
-            DABON
-        </h2>
+  <h3>La herida familiar</h3>
+  <p>
+   Dabon creció sin una relación cercana con su padre. Luther estaba
+   concentrado en expandir su imperio y conseguir más poder y fortuna.
+   En la familia, mostrar debilidad no era una opción. Ese entorno ayuda
+   a entender por qué Dabon desarrolló una actitud orgullosa y por qué
+   guarda tanto resentimiento hacia Luther.
+  </p>
 
-        <p>
-            Príncipe demonio.
-            <br><br>
+  <p class="archiveNote">
+   NOTA DEL ARCHIVO: algunos datos y nombres todavía no han sido revelados.
+   Este documento contiene únicamente información conocida hasta ahora.
+   ARCHIVO EN DESARROLLO.
+  </p>
 
-            Hijo de Luther.
-            <br><br>
-
-            Edad demoníaca: 114 años.
-            <br><br>
-
-            Su presencia en el mundo humano
-            no debería ser posible.
-        </p>
-
-        <button
-            class="closeArchive"
-            onclick="closeDabon()"
-        >
-            Cerrar archivo
-        </button>
-
-    </div>
-
+  <button class="closeArchive" onclick="closeDabon()">Cerrar archivo</button>
+ </div>
 </div>
-
 
 <script>
 
@@ -1250,13 +515,10 @@ footer strong{
 const chapters = [
 
 {
-    episode:"EPISODIO 01",
-
-    title:"La bienvenida CharBon",
-
-    subtitle:"CharBon",
-
-    text:`
+ episode:"EPISODIO 01",
+ title:"La bienvenida CharBon",
+ subtitle:"CharBon",
+ text:`
 
 En un domingo cualquiera, Charles, mejor conocido como Charlie por sus 3 amigos, está tirado en su cama. Está hecho bolita en su manta y tiene el celular en mano.
 
@@ -1302,17 +564,14 @@ Dabon sigue juzgando su cuarto, fijándose en las chicas anime, y las mira con r
 
 —Nerd de manual —dice Dabon para sí mismo, negando con la cabeza.
 
-`},
+`
+},
 
 {
-
-    episode:"EPISODIO 02",
-
-    title:"La verdad",
-
-    subtitle:"CharBon",
-
-    text:`
+ episode:"EPISODIO 02",
+ title:"La verdad",
+ subtitle:"CharBon",
+ text:`
 
 Después del primer encuentro de nuestros protagonistas, Dabon empezó a hablar con Charlie mientras comía panes con azúcar que le había dado Charlie. Charlie, por su parte, se había calmado un poco, aunque su corazón martillaba sus costillas fuertemente.
 
@@ -1361,270 +620,174 @@ Disciplina. Cero debilidad.
 Su padre nunca le importó, solo hacer crecer su imperio en el infierno, conseguir poder y fortuna, pero nunca atender los problemas de su hijo.
 
 `
+},
 
+{
+ episode:"EPISODIO 03",
+ title:"La Colada",
+ subtitle:"CharBon",
+ text:`
+
+Al día siguiente del primer encuentro de nuestros protagonistas, Charlie consiguió un uniforme de contrabando con un amigo de Gabriel, Wisley. Wisley consiguió un uniforme que le queda perfecto a Dabon y que le permitirá colarse en la escuela de Charlie.
+
+—Voy a admitir que me queda bien... Como todo —dice Dabon mirando su reflejo en el espejo.
+
+—Deja de ser tan arrogante, Dabon —dice Charlie abrochando el último botón de su camisa con aburrimiento.
+
+—¿¡QUÉ DIJISTE, MALDITO NERD!? —gruñe Dabon enojado.
+
+—Yo... Nada, nada, Dabon —dice Charlie nervioso, levantando las manos en señal de rendición y paz.
+
+—Más te vale —dice Dabon volviendo a su reflejo.
+
+Varios minutos después, llegan a la escuela después de que Charlie rechazara que su madre lo llevara por Dabon.
+
+—Ugh, ¡qué lugar tan mediocre! —dice Dabon mirando a los estudiantes pasar.
+
+—Tranquilo, Dabon, son solo seis horas aquí —dice Charlie encogiéndose un poco para no ser tan notado, como todos los días.
+
+—¡¿Seis horas?! ¡¿Estás loco?! En mi vida pasaría seis horas en un lugar tan mediocre con humanos! —dice Dabon indignado mientras se ajusta la mochila que Charlie le dio.
+
+—Si a nadie le gusta, menos a ti —dice Charlie suspirando cansado.
+
+Los chicos llegan al salón y se encuentran con Lizbeth y sus amigas. Charlie se queda congelado mirándola.
+
+—¿Qué me ves, nerd? —pregunta Lizbeth con cara de irritación.
+
+—¿Yo? Yo... Eh... Yo... Nada, nada —dice Charlie nervioso.
+
+—Qué patético —dice Dabon para sí mismo.
+
+Lizbeth se queda mirando a Dabon con curiosidad.
+
+—¿Y tú eres...? —dice Lizbeth mordiéndose el labio inferior.
+
+—Me llamo Dabon, niña —dice Dabon con su habitual cara de pocos amigos.
+
+`
 }
 
 ];
 
-
-/* =========================================
-   VARIABLE ACTUAL
-========================================= */
-
+/* VARIABLE ACTUAL */
 let currentChapter = 0;
 
-
-/* =========================================
-   ABRIR CAPÍTULO
-========================================= */
-
+/* ABRIR CAPÍTULO */
 function openChapter(index){
+ if(index < 0 || index >= chapters.length) return;
 
-    currentChapter = index;
+ currentChapter = index;
+ const chapter = chapters[currentChapter];
 
-    const chapter =
-        chapters[currentChapter];
+ document.getElementById("readerEpisode").textContent = chapter.episode;
+ document.getElementById("readerTitle").textContent = chapter.title;
+ document.getElementById("readerSubtitle").textContent = chapter.subtitle;
+ document.getElementById("storyText").textContent = chapter.text;
 
+ document.getElementById("chapterIndicator").textContent =
+  `${currentChapter + 1} / ${chapters.length}`;
 
-    document.getElementById(
-        "readerEpisode"
-    ).textContent =
-        chapter.episode;
+ document.getElementById("reader").style.display = "block";
+ document.getElementById("reader").scrollIntoView({behavior:"smooth"});
 
-
-    document.getElementById(
-        "readerTitle"
-    ).textContent =
-        chapter.title;
-
-
-    document.getElementById(
-        "readerSubtitle"
-    ).textContent =
-        chapter.subtitle;
-
-
-    document.getElementById(
-        "storyText"
-    ).textContent =
-        chapter.text;
-
-
-    document.getElementById(
-        "chapterIndicator"
-    ).textContent =
-        `${currentChapter + 1} / ${chapters.length}`;
-
-
-    document.getElementById(
-        "reader"
-    ).style.display =
-        "block";
-
-
-    document.getElementById(
-        "reader"
-    ).scrollIntoView({
-        behavior:"smooth"
-    });
-
-
-    updateReaderButtons();
-
+ updateReaderButtons();
 }
 
-
-/* =========================================
-   BOTONES DEL LECTOR
-========================================= */
-
+/* BOTONES DEL LECTOR */
 function updateReaderButtons(){
+ const previous = document.getElementById("previousButton");
+ const next = document.getElementById("nextButton");
 
-    const previous =
-        document.getElementById(
-            "previousButton"
-        );
+ previous.style.visibility =
+  currentChapter === 0 ? "hidden" : "visible";
 
-    const next =
-        document.getElementById(
-            "nextButton"
-        );
-
-
-    previous.style.visibility =
-        currentChapter === 0
-        ? "hidden"
-        : "visible";
-
-
-    next.style.visibility =
-        currentChapter === chapters.length - 1
-        ? "hidden"
-        : "visible";
-
+ next.style.visibility =
+  currentChapter === chapters.length - 1 ? "hidden" : "visible";
 }
-
 
 function nextChapter(){
-
-    if(
-        currentChapter <
-        chapters.length - 1
-    ){
-
-        openChapter(
-            currentChapter + 1
-        );
-
-    }
-
+ if(currentChapter < chapters.length - 1){
+  openChapter(currentChapter + 1);
+ }
 }
-
 
 function previousChapter(){
-
-    if(
-        currentChapter > 0
-    ){
-
-        openChapter(
-            currentChapter - 1
-        );
-
-    }
-
+ if(currentChapter > 0){
+  openChapter(currentChapter - 1);
+ }
 }
 
-
-/* =========================================
-   CERRAR LECTOR
-========================================= */
-
+/* CERRAR LECTOR */
 function closeReader(){
-
-    document.getElementById(
-        "reader"
-    ).style.display =
-        "none";
-
-    goHome();
-
+ document.getElementById("reader").style.display = "none";
+ goHome();
 }
 
-
-/* =========================================
-   NAVEGACIÓN
-========================================= */
-
+/* NAVEGACIÓN */
 function goHome(){
-
-    document.getElementById(
-        "home"
-    ).scrollIntoView({
-        behavior:"smooth"
-    });
-
+ document.getElementById("home").scrollIntoView({behavior:"smooth"});
 }
-
 
 function goStory(){
-
-    document.getElementById(
-        "story"
-    ).scrollIntoView({
-        behavior:"smooth"
-    });
-
+ document.getElementById("story").scrollIntoView({behavior:"smooth"});
 }
 
-
-/* =========================================
-   TEMA
-========================================= */
-
+/* TEMA */
 function toggleTheme(){
-
-    document.body.classList.toggle(
-        "lightMode"
-    );
-
+ document.body.classList.toggle("lightMode");
 }
 
-
-/* =========================================
-   DABON
-========================================= */
-
+/* ARCHIVO DE DABON */
 function openDabon(){
-
-    document.getElementById(
-        "dabonArchive"
-    ).classList.add(
-        "active"
-    );
-
+ document.getElementById("dabonArchive").classList.add("active");
 }
-
 
 function closeDabon(){
-
-    document.getElementById(
-        "dabonArchive"
-    ).classList.remove(
-        "active"
-    );
-
+ document.getElementById("dabonArchive").classList.remove("active");
 }
 
+/* EASTER EGG: TRES TOQUES EN LA DESCRIPCIÓN DE DABON */
+let dabonTaps = 0;
+let dabonTapTimer;
 
-/* =========================================
-   EASTER EGG: ESCRIBIR CHARBON
-========================================= */
+function tapDabonDescription(){
+ dabonTaps++;
+ clearTimeout(dabonTapTimer);
 
+ if(dabonTaps >= 3){
+  dabonTaps = 0;
+  openDabon();
+ }else{
+  dabonTapTimer = setTimeout(()=>{
+   dabonTaps = 0;
+  },1800);
+ }
+}
+
+/* EASTER EGG ANTIGUO: ESCRIBIR CHARBON */
 let secretCode = "";
 
+document.addEventListener("keydown",function(event){
 
-document.addEventListener(
-    "keydown",
-    function(event){
+ if(event.key === "Escape"){
+  closeDabon();
+ }
 
-        if(
-            event.key.length !== 1
-        ){
-            return;
-        }
+ if(event.key.length !== 1) return;
 
+ secretCode += event.key.toLowerCase();
 
-        secretCode +=
-            event.key.toLowerCase();
+ if(secretCode.length > 20){
+  secretCode = secretCode.slice(-20);
+ }
 
+ if(secretCode.includes("charbon")){
+  openDabon();
+  secretCode = "";
+ }
 
-        if(
-            secretCode.length > 20
-        ){
-
-            secretCode =
-                secretCode.slice(-20);
-
-        }
-
-
-        if(
-            secretCode.includes(
-                "charbon"
-            )
-        ){
-
-            openDabon();
-
-            secretCode = "";
-
-        }
-
-    }
-);
+});
 
 </script>
-
 </body>
 </html>
